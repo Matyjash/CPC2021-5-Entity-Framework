@@ -1,0 +1,35 @@
+﻿@model GraphicCard
+
+<!--Potwierdzenie kupna karty, wyświetlamy jej dane i pytamy czy użytkownik potwierdza kupno-->
+@using (Html.BeginForm("Delete", "GraphicCards", FormMethod.Post))
+{
+<div class="form-block">
+    <!--Komunikat-->
+    <h4>Do you confirm the purchase?</h4>
+    <!--Dane-->
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Producer.ProducerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Producer.ProducerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+
+    </dl>
+</div>
+<!--Przycisk potwierdzenia-->
+    <input type="submit" value="Kup" class="btn btn-danger" />
+}

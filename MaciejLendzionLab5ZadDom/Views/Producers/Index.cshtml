@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Producer>
+@{
+    ViewData["Title"] = "Producenci";
+}
+
+<!--Lista prodcuentów, wyświetlamy kolejno w tabeli kazdego producenta-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProducerName)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var model in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelitem => model.ProducerName)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

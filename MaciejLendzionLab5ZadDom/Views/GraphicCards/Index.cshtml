@@ -1,0 +1,40 @@
+﻿@model IEnumerable<GraphicCard>
+@{
+    ViewData["Title"] = "Lista kart graficznych";
+}
+
+<!---Strona z kartami graficznymi, wyświetlamy oferowane karty w formie tabeli-->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Producer.ProducerName)
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!--Dla wszystich kart w liscie-->
+            @foreach (var model in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelitem => model.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelitem => model.Producer.ProducerName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Buy", "Delete", "GraphicCards", routeValues: new { id = model.ProducerId })
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Dealer>
+@{
+    ViewData["Title"] = "Dealers";
+}
+
+<!--Wyświetlamy tablice dealerów-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                Rate
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var model in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelitem => model.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => model.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => model.RateId)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<!--Przekierowanie do opisu ocen-->
+
+@Html.ActionLink("Rates description", "Rates", "Dealers")

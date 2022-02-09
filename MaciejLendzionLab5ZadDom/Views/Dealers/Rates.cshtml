@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Rate>
+@{
+    ViewData["Title"] = "Rates Descriprion";
+}
+<!--Wyświetlamy tablice ocen-->
+<center>
+    <h3>Rates' descriprions:</h3>
+</center>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Rate
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var model in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelitem => model.RateId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => model.Description)
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
